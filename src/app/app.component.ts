@@ -1,3 +1,4 @@
+import { DatosService } from './shared/datos.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'app works!';
+
+  constructor(private datosService: DatosService) {
+    this.datosService.CargarDatos();
+  }
+
+
 }

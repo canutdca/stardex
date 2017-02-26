@@ -1,0 +1,30 @@
+<section name="Personajes">
+  <header class="title">
+    <h2>personajes</h2>
+  </header>
+  <section class="contenidor">
+    <article class="item" *ngFor="let personaje of personajes">
+      <div class="item--title">
+        <strong>{{ personaje.name }}</strong>
+      </div>
+      <div class="item--info">
+        <div class="stat">
+          <div class="stat--title">Altura:</div>
+          <div class="stat--info">{{personaje.height}}</div>
+        </div>
+        <div class="stat">
+          <div class="stat--title">Género:</div>
+          <div class="stat--info">{{personaje.gender}}</div>
+        </div>
+        <div class="stat">
+          <div class="stat--title">Películas:</div>
+          <div class="stat--info stat-info__array">
+            <div *ngFor="let film of personaje.films">{{film}}</div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+</section>
+
+{{personajes | json}}

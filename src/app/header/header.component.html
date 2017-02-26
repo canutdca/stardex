@@ -1,0 +1,31 @@
+<header class="content">
+  <div class="cabecera">
+    <div class="title">
+      <h1>{{ title }}</h1>
+    </div>
+    <div class="btn-menu">
+      <i class="fa fa-bars" aria-hidden="true" (click)="toggleMenu();"></i>
+    </div>
+  </div>
+  <nav id="nav-menu">
+    <ul>
+      <li><a routerLink="/Personajes">Personajes</a></li>
+      <li><a routerLink="/Peliculas">Peliculas</a></li>
+      <li><a routerLink="/NavesEspaciales">Naves espaciales</a></li>
+      <li><a routerLink="/Vehiculos">Vehículos</a></li>
+      <li><a routerLink="/Especies">Espécies</a></li>
+      <li><a routerLink="/Planetas">Planetas</a></li>
+    </ul>
+  </nav>
+  <nav id="nav-menu-mobile">
+    <ul>
+      <li><a routerLink="/Personajes">Personajes</a></li>
+      <li><a routerLink="/Peliculas">Peliculas</a></li>
+      <li><a routerLink="/NavesEspaciales">Naves espaciales</a></li>
+      <li><a routerLink="/Vehiculos">Vehículos</a></li>
+      <li><a routerLink="/Especies">Espécies</a></li>
+      <li><a routerLink="/Planetas">Planetas</a></li>
+    </ul>
+  </nav>
+</header>
+<div id="opacidad" class="opacidad" [ngClass]="{opacidad__true: !oculto}"></div>

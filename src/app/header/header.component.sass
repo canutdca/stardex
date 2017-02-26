@@ -1,0 +1,54 @@
+@import '../../assets/styles/_variables.sass'
+
+.cabecera
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+#nav-menu
+    display: none
+    ul
+        display: flex
+        justify-content: space-between
+
+#nav-menu-mobile
+    position: fixed
+    z-index: 10
+    transform: translateX(-340px)
+    transition: all .5s ease
+    ul
+        background-color: peru
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        border: 1px solid black
+        width: 320px
+        li
+            padding: .8rem
+            border-bottom: 1px solid black
+            &:last-child
+                border-bottom: none
+
+.fa
+    font-size: 2em
+
+.opacidad
+    z-index: -1
+    position: fixed
+    width: 100%
+    height: 100%
+    transition: all .5s ease
+    &__true
+        z-index: 9
+        background-color: rgba(0, 0, 160, .2)
+
+@media screen and (min-width: $Break-small)
+    .cabecera
+        & .btn-menu
+            display: none
+    #nav-menu-mobile
+        display: none
+    #nav-menu
+        display: block
+
+  
