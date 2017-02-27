@@ -1,4 +1,5 @@
 import { ApiService } from './shared/api.service';
+import { DatosService } from './shared/datos.service';
 import { SharedModule } from './shared/shared.module';
 import { HttpToolsService } from './shared/http-tools-service.service';
 import { HeaderComponent } from './header/header.component';
@@ -46,7 +47,8 @@ const routes: Routes = [
   ],
   providers: [
     HttpToolsService,
-    ApiService
+    ApiService,
+    DatosService
     ],
   bootstrap: [AppComponent]
 })

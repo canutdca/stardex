@@ -27,13 +27,13 @@ export class PeliculasService {
       .map(this.httpToolsService.obtenerDatos);
   }
 
-  getEspeciesPelicula(pelicula: Pelicula, species: string[]): Observable<Array<Item>> {
-    species.forEach(element => {
-      let specie = this.http
-                        .get(this.urlSpecies)
-                        .map(this.httpToolsService.obtenerDatos).onCompleted
+  // getEspeciesPelicula(pelicula: Pelicula, species: string[]): Observable<Array<Item>> {
+  //   species.forEach(element => {
+  //     let specie = this.http
+  //                       .get(this.urlSpecies)
+  //                       .map(this.httpToolsService.obtenerDatos).onCompleted
                         
-      pelicula.especies.push(new Item (specie.))
-    });
-  }
+  //     pelicula.especies.push(new Item (specie.))
+  //   });
+  // }
 }

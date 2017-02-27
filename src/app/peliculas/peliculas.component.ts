@@ -22,4 +22,5 @@ export class PeliculasComponent implements OnInit {
     console.log("peliculas:" + JSON.stringify(this.peliculas));
   }
 
+
 }

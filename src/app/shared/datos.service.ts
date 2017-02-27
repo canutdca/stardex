@@ -21,8 +21,9 @@ export class DatosService {
   CargarDatos() {
     this.peliculasApi$ = this.apiService.getPeliculas$();
     this.peliculasApi$.subscribe(peliculasApi => {
-      this.peliculas$.map(this.httpToolsService.copiarDatosApi(peliculasApi));
-      //peliculasApi.forEach(x => this.peliculas.push(new Pelicula(x)));
+      //this.peliculas$.map(this.httpToolsService.copiarDatosApi(peliculasApi));
+      peliculasApi.forEach(x => this.peliculas.push(new Pelicula(x)));
+      this.peliculas$ = this.asObservable(this.peliculas);
     });
 
     this.especiesApi$ = this.apiService.getEspecies$();
@@ -32,12 +33,10 @@ export class DatosService {
   }
 
   getPeliculas$(): Observable<Pelicula[]> {
-    return asObservable(this.peliculas);
+    return this.asObservable(this.peliculas);
   }
 
-  getPelicula$(id: number): Observable<Pelicula> {
-    return this.http
-      .get(`${this.urlPeliculas}/${id}`)
-      .map(this.httpToolsService.obtenerDatos);
-  }
+  asObservable(subject: any) {
+     return new Observable(fn => subject.subscribe(fn));
+ }
 }
