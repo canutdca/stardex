@@ -19,6 +19,7 @@ export class EspecieApi {
 }
 
 export class Especie {
+    id: number;
     nombre: string;
     clasificacion: string;
     designacion: string;
@@ -32,11 +33,12 @@ export class Especie {
     personajes: Array<Item>;
     peliculas: Array<Item>;
     url: string;
-    creacion: string;
-    edicion: string;
-
+    creacion: Date;
+    edicion: Date;
 
     constructor(ea: EspecieApi) {
+        let aux: string[] = ea.url.split('/');
+        this.id = Number(aux[aux.length - 1]);
         this.nombre = ea.name;
         this.clasificacion = ea.classification;
         this.designacion = ea.designation;
@@ -50,7 +52,7 @@ export class Especie {
         this.personajes = Array<Item>();
         this.peliculas = Array<Item>();
         this.url = ea.url;
-        this.creacion = ea.created;
-        this.edicion = ea.edited;
+        this.creacion = new Date(ea.created);
+        this.edicion = new Date(ea.edited);
      }
 }

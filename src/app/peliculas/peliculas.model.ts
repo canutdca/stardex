@@ -18,6 +18,7 @@ export class PeliculaApi {
 }
 
 export class Pelicula {
+    id: number;
     titulo: string;
     episodio: number;
     opening: string;
@@ -30,10 +31,12 @@ export class Pelicula {
     personajes: Array<Item>;
     planetas: Array<Item>;
     url: string;
-    creacion: string;
-    edicion: string;
+    creacion: Date;
+    edicion: Date;
 
     constructor(pa: PeliculaApi) {
+        let aux: string[] = pa.url.split('/');
+        this.id = Number(aux[aux.length - 1]);
         this.titulo = pa.title;
         this.episodio = pa.episode_id;
         this.opening = pa.opening_crawl;
@@ -46,7 +49,7 @@ export class Pelicula {
         this.personajes = new Array<Item>();
         this.planetas = new Array<Item>();
         this.url = pa.url;
-        this.creacion = pa.created;
-        this.edicion = pa.edited;
+        this.creacion = new Date(pa.created);
+        this.edicion = new Date(pa.edited);
     }
 }
