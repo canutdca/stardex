@@ -3,17 +3,17 @@ import { ApiService } from './api.service';
 import { Especie, EspecieApi } from './../especies/especies.model';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 import { Pelicula, PeliculaApi } from './../peliculas/peliculas.model';
 import { Injectable } from '@angular/core';
 
 @Injectable()
 export class DatosService {
 
-  peliculas: Pelicula[] = [];
-  peliculas$: Observable<Pelicula[]>;
+  peliculas$: BehaviorSubject<Pelicula[]> = new BehaviorSubject([]);
   peliculasApi$: Observable<PeliculaApi[]>;
 
-  especies: Especie[] = [];
+  especies$: Especie[] = [];
   especiesApi$: Observable<EspecieApi[]>;
 
   constructor(private apiService: ApiService, private httpToolsService: HttpToolsService) { }
@@ -22,21 +22,13 @@ export class DatosService {
     this.peliculasApi$ = this.apiService.getPeliculas$();
     this.peliculasApi$.subscribe(peliculasApi => {
       //this.peliculas$.map(this.httpToolsService.copiarDatosApi(peliculasApi));
-      peliculasApi.forEach(x => this.peliculas.push(new Pelicula(x)));
-      this.peliculas$ = this.asObservable(this.peliculas);
-    });
-
-    this.especiesApi$ = this.apiService.getEspecies$();
-    this.especiesApi$.subscribe(especiesApi => {
-      especiesApi.forEach(x => this.especies.push(new Especie(x)));
+      let pelis = []
+      peliculasApi.forEach(x => pelis.push(new Pelicula(x)));
+      this.peliculas$.next(pelis)
     });
   }
 
   getPeliculas$(): Observable<Pelicula[]> {
-    return this.asObservable(this.peliculas);
+    return this.peliculas$.asObservable();
   }
-
-  asObservable(subject: any) {
-     return new Observable(fn => subject.subscribe(fn));
- }
 }
