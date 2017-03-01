@@ -5,9 +5,13 @@
   <section class="contenidor">
     <div *ngFor="let peli of peliculas"> 
       <app-card
-        [item1]="peli.nombre"
-        [item2]="peli.director"
-        [item3]="peli.fecha">
+        [titulo]="peli.titulo"
+        [titulo1]="item1"
+        [info1]="peli.director"
+        [titulo2]="item2"
+        [info2]="peli.productor"
+        [titulo3]="item3"
+        [info3]="peli.fecha">
       </app-card>
     </div>
   </section>

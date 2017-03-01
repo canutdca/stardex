@@ -66,7 +66,7 @@ export class DatosService {
     this.especiesApi$.subscribe(especiesApi => {
       let aux = [];
       especiesApi.forEach(x => aux.push(new Especie(x)));
-      this.peliculas$.next(aux);
+      this.especies$.next(aux);
     });
 
     this.planetasApi$ = this.apiService.getPlanetas$();
@@ -80,7 +80,6 @@ export class DatosService {
   getPersonajes$(): Observable<Personaje[]> {
     return this.personajes$.asObservable();
   }
-  
 
   getPeliculas$(): Observable<Pelicula[]> {
     return this.peliculas$.asObservable();

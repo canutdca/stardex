@@ -1,6 +1,5 @@
 import { ApiService } from './shared/api.service';
 import { DatosService } from './shared/datos.service';
-import { SharedModule } from './shared/shared.module';
 import { HttpToolsService } from './shared/http-tools-service.service';
 import { HeaderComponent } from './header/header.component';
 import { PeliculasComponent } from './peliculas/peliculas.component';
@@ -12,9 +11,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-
 import { AppComponent } from './app.component';
-import { CardComponent } from './shared/card/card.component';
 
 const routes: Routes = [
   { path: '', component: PersonajesComponent },

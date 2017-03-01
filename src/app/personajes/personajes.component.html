@@ -3,28 +3,16 @@
     <h2>personajes</h2>
   </header>
   <section class="contenidor">
-    <article class="item" *ngFor="let personaje of personajes">
-      <div class="item--title">
-        <strong>{{ personaje.name }}</strong>
-      </div>
-      <div class="item--info">
-        <div class="stat">
-          <div class="stat--title">Altura:</div>
-          <div class="stat--info">{{personaje.height}}</div>
-        </div>
-        <div class="stat">
-          <div class="stat--title">Género:</div>
-          <div class="stat--info">{{personaje.gender}}</div>
-        </div>
-        <div class="stat">
-          <div class="stat--title">Películas:</div>
-          <div class="stat--info stat-info__array">
-            <div *ngFor="let film of personaje.films">{{film}}</div>
-          </div>
-        </div>
-      </div>
-    </article>
+    <div *ngFor="let pers of personajes"> 
+      <app-card
+        [titulo]="pers.nombre"
+        [titulo1]="item1"
+        [info1]="pers.altura"
+        [titulo2]="item2"
+        [info2]="pers.peso"
+        [titulo3]="item3"
+        [info3]="pers.nacimiento">
+      </app-card>
+    </div>
   </section>
 </section>
-
-{{personajes | json}}

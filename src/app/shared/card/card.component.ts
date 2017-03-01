@@ -1,24 +1,23 @@
-import { Pelicula } from './../../peliculas/peliculas.model';
-import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.sass']
 })
-export class CardComponent implements OnInit, OnChanges {
+export class CardComponent implements OnInit {
 
-  @Input() private item1: string;
-  @Input() private item2: string;
-  @Input() private item3: string;
+  @Input() private titulo: any;
+  @Input() private titulo1: any;
+  @Input() private info1: any;
+  @Input() private titulo2: any;
+  @Input() private info2: any;
+  @Input() private titulo3: any;
+  @Input() private info3: any;
 
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
-  ngOnChanges() {
-  }
+  ngOnInit() { }
 
 }

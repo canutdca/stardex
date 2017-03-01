@@ -1,5 +1,4 @@
 import { SharedModule } from './../shared/shared.module';
-import { PeliculasService } from './peliculas.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PeliculasComponent } from './peliculas.component';
@@ -10,8 +9,7 @@ import { PeliculasComponent } from './peliculas.component';
     SharedModule
   ],
   declarations: [PeliculasComponent],
-  exports: [PeliculasComponent],
-  providers: [PeliculasService]
+  exports: [PeliculasComponent]
 })
 
 export class PeliculasModule { }

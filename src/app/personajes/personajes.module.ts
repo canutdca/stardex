@@ -1,14 +1,14 @@
-import { PersonajesService } from './personajes.service';
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PersonajesComponent } from './personajes.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   declarations: [PersonajesComponent],
-  exports: [PersonajesComponent],
-  providers: [PersonajesService]
+  exports: [PersonajesComponent]
 })
 export class PersonajesModule { }
