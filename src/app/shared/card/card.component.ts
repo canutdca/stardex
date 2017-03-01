@@ -8,18 +8,17 @@ import { Component, OnInit, OnChanges, Input } from '@angular/core';
 })
 export class CardComponent implements OnInit, OnChanges {
 
-  @Input()
-  private peliculas: Pelicula[];
+  @Input() private item1: string;
+  @Input() private item2: string;
+  @Input() private item3: string;
+
 
   constructor() { }
 
   ngOnInit() {
-    console.log('hola');
-    console.log(JSON.stringify(this.peliculas));
   }
 
   ngOnChanges() {
-      console.log(JSON.stringify(this.peliculas));
   }
 
 }

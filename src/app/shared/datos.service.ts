@@ -25,7 +25,7 @@ export class DatosService {
   vehiculos$: BehaviorSubject<Vehiculo[]> = new BehaviorSubject([]);
   vehiculosApi$: Observable<VehiculoApi[]>;
 
-  especies$: BehaviorSubject<Pelicula[]> = new BehaviorSubject([]);
+  especies$: BehaviorSubject<Especie[]> = new BehaviorSubject([]);
   especiesApi$: Observable<EspecieApi[]>;
 
   planetas$: BehaviorSubject<Planeta[]> = new BehaviorSubject([]);
@@ -77,8 +77,8 @@ export class DatosService {
     });
   }
 
-  getPersonajes$(): Observable<Pelicula[]> {
-    return this.peliculas$.asObservable();
+  getPersonajes$(): Observable<Personaje[]> {
+    return this.personajes$.asObservable();
   }
   
 
@@ -86,20 +86,20 @@ export class DatosService {
     return this.peliculas$.asObservable();
   }
 
-  getNaves$(): Observable<Pelicula[]> {
-    return this.peliculas$.asObservable();
+  getNaves$(): Observable<Nave[]> {
+    return this.naves$.asObservable();
   }
 
-  getVehiculos$(): Observable<Pelicula[]> {
-    return this.peliculas$.asObservable();
+  getVehiculos$(): Observable<Vehiculo[]> {
+    return this.vehiculos$.asObservable();
   }
 
-  getEspecies$(): Observable<Pelicula[]> {
+  getEspecies$(): Observable<Especie[]> {
     return this.especies$.asObservable();
   }
 
-  getPlanetas$(): Observable<Pelicula[]> {
-    return this.peliculas$.asObservable();
+  getPlanetas$(): Observable<Planeta[]> {
+    return this.planetas$.asObservable();
   }
 
   GetIdFromUrl(url: string): number {

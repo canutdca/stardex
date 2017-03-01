@@ -1,4 +1,14 @@
-<p>
-  peliculas works!
-</p>
-<app-card [peliculas]="peliculas"></app-card>
+<section name="Personajes">
+  <header class="title">
+    <h2>personajes</h2>
+  </header>
+  <section class="contenidor">
+    <div *ngFor="let peli of peliculas"> 
+      <app-card
+        [item1]="peli.nombre"
+        [item2]="peli.director"
+        [item3]="peli.fecha">
+      </app-card>
+    </div>
+  </section>
+</section>
