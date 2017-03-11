@@ -3,11 +3,12 @@ import { PeliculaApi } from './../peliculas/peliculas.model';
 import { NaveApi } from './../naves/naves.model';
 import { VehiculoApi } from './../vehiculos/vehiculos.model';
 import { EspecieApi } from './../especies/especies.model';
-import { PlanetaApi } from './../planetas/planetas.datos';
+import { PlanetaApi } from './../planetas/planetas.model';
 import { HttpToolsService } from './http-tools-service.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ApiService {

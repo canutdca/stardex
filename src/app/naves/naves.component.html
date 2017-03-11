@@ -1,0 +1,18 @@
+<section name="Naves">
+  <header class="title">
+    <h2>Naves Espaciales</h2>
+  </header>
+  <section class="contenidor">
+    <div *ngFor="let nav of naves"> 
+      <app-card
+        [titulo]="nav.nombre"
+        [titulo1]="item1"
+        [info1]="nav.modelo"
+        [titulo2]="item2"
+        [info2]="nav.tipo"
+        [titulo3]="item3"
+        [info3]="nav.velocidad">
+      </app-card>
+    </div>
+  </section>
+</section>

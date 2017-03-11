@@ -3,7 +3,7 @@ import { Pelicula, PeliculaApi } from './../peliculas/peliculas.model';
 import { Nave, NaveApi } from './../naves/naves.model';
 import { Vehiculo, VehiculoApi } from './../vehiculos/vehiculos.model';
 import { Especie, EspecieApi } from './../especies/especies.model';
-import { Planeta, PlanetaApi } from './../planetas/planetas.datos';
+import { Planeta, PlanetaApi } from './../planetas/planetas.model';
 
 import { ApiService } from './api.service';
 import { Observable } from 'rxjs/Observable';

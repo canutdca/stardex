@@ -1,3 +1,18 @@
-<p>
-  especies works!
-</p>
+<section name="Especies">
+  <header class="title">
+    <h2>Especies</h2>
+  </header>
+  <section class="contenidor">
+    <div *ngFor="let esp of especies"> 
+      <app-card
+        [titulo]="esp.nombre"
+        [titulo1]="item1"
+        [info1]="esp.clasificacion"
+        [titulo2]="item2"
+        [info2]="esp.designacion"
+        [titulo3]="item3"
+        [info3]="esp.idioma">
+      </app-card>
+    </div>
+  </section>
+</section>

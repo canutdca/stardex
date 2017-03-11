@@ -1,0 +1,18 @@
+<section name="Planetas">
+  <header class="title">
+    <h2>Planetas</h2>
+  </header>
+  <section class="contenidor">
+    <div *ngFor="let pla of planetas"> 
+      <app-card
+        [titulo]="pla.nombre"
+        [titulo1]="item1"
+        [info1]="pla.diametro"
+        [titulo2]="item2"
+        [info2]="pla.gravedad"
+        [titulo3]="item3"
+        [info3]="pla.contaminacion">
+      </app-card>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,18 @@
+<section name="Vehiculos">
+  <header class="title">
+    <h2>Vehiculos</h2>
+  </header>
+  <section class="contenidor">
+    <div *ngFor="let veh of vehiculos"> 
+      <app-card
+        [titulo]="veh.nombre"
+        [titulo1]="item1"
+        [info1]="veh.modelo"
+        [titulo2]="item2"
+        [info2]="veh.clase"
+        [titulo3]="item3"
+        [info3]="veh.velocidad">
+      </app-card>
+    </div>
+  </section>
+</section>

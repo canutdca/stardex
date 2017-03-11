@@ -24,6 +24,7 @@ export class NaveApi {
 export class Nave {
     id: number;
     nombre: string;
+    modelo: string;
     tipo: string;
     fabricado: string;
     precio: number;
@@ -34,6 +35,7 @@ export class Nave {
     hypervelocidad: number;
     MGLT: string;
     capacidad: number;
+    consumibles: string;
     peliculas: Array<Item>;
     pilotos: Array<Item>;
     url: string;
@@ -44,6 +46,7 @@ export class Nave {
         let aux: string[] = na.url.split('/');
         this.id = Number(aux[aux.length - 1]);
         this.nombre = na.name;
+        this.modelo = na.model;
         this.tipo = na.starship_class;
         this.fabricado = na.manufacturer;
         this.precio = Number(na.cost_in_credits);
@@ -54,6 +57,7 @@ export class Nave {
         this.hypervelocidad = Number(na.hyperdrive_rating);
         this.MGLT = na.MGLT;
         this.capacidad = Number(na.cargo_capacity);
+        this.consumibles = na.consumables;
         this.peliculas = new Array<Item>();
         this.pilotos = new Array<Item>();
         this.url = na.url;
